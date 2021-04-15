@@ -1,42 +1,46 @@
 <template>
-  <a-row :gutter="16">
-    <a-col :span="6">
-      <a-statistic-countdown
-        title="Countdown"
-        :value="deadline"
-        style="margin-right: 50px"
-        @finish="onFinish"
-      />
-    </a-col>
-    <a-col :span="6">
-      <a-statistic-countdown
-        title="Million Seconds"
-        :value="deadline"
-        format="HH:mm:ss:SSS"
-        style="margin-right: 50px"
-      />
-    </a-col>
-    <a-col :span="6">
-      <a-statistic-countdown
-        title="Day Level"
-        :value="deadline"
-        format="D 天 H 时 m 分 s 秒"
-      />
-    </a-col>
-  </a-row>
+  <div style="background-color: #ececec; padding: 20px">
+
+    <a-row :gutter="16">
+      <a-col :span="6">
+        <a-card title="Card title" :bordered="false">
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="6">
+        <a-card title="Card title" :bordered="false">
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="6">
+        <a-card title="Card title" :bordered="false">
+          <p>card content</p>
+        </a-card>
+      </a-col>
+      <a-col :span="6">
+        <a-card title="Card title" :bordered="false">
+          <p>card content</p>
+        </a-card>
+      </a-col>
+    </a-row>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
   setup() {
+    const data = ['red','yellow','green']
     const onFinish = () => {
       console.log('finished!')
     }
     return {
       deadline: Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30,
-      onFinish
+      onFinish,
+      data
     }
   }
 })
 </script>
+<style lang="scss">
+</style>
 

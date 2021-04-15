@@ -32,11 +32,17 @@ const router = createRouter({
   history: createWebHistory("/"),
   routes,
 });
+
 router.beforeEach((to, from, next) => {
-  if (to.name !== "Login") {
-    next({ name: "Login" });
-  } else {
+  if (sessionStorage.token) {
     next();
+  } else {
+    if (to.name !== "Login") {
+      next({ name: "Login" });
+    } else {
+      next();
+    }
   }
 });
+
 export default router;

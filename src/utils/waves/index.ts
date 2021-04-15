@@ -76,8 +76,8 @@ class Three {
     this.container.appendChild(this.renderer.domElement); //body元素中插入canvas对象
     this.createControls()//监听窗口变化
     this.render()
-    console.log(this.controls.minZoom)
-    console.log(this.controls)
+    // console.log(this.controls.minZoom)
+    // console.log(this.controls)
     this.controls.minZoom = 0;
     this.controls.maxZoom = 0;
     // 上下旋转范围
