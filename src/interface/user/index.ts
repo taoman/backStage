@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-04-07 16:58:24
  * @LastEditors: taoman
- * @LastEditTime: 2021-04-26 13:21:55
+ * @LastEditTime: 2021-04-26 17:00:35
  */
 export namespace UserInterface{
   export interface LoginIntreface {
@@ -33,7 +33,7 @@ export interface IndexParameter{
 export interface IndexInterface<T=any> {
   status: number
   msg: string
-  data:IndexData[]
+  data:T
 }
 
 export interface IndexData {

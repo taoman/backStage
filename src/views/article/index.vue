@@ -104,11 +104,11 @@ export default defineComponent({
             name: undefined
         })
         const { proxy } = getCurrentInstance() as ComponentInternalInstance;
-        const tableData:UnwrapRef<TableState> = reactive({
+        const tableData:UnwrapRef<TableState>= reactive({
             data : []
         })
         const lists = async () => {
-            const res = await proxy?.$module.user.index()
+            const res = await proxy?.$module.user.index<UserInterface.IndexData[]>()
             tableData.data = res?.data.data
         }
         onMounted(() => {
