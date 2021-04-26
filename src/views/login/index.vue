@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-03-03 09:53:57
  * @LastEditors: taoman
- * @LastEditTime: 2021-04-15 10:19:36
+ * @LastEditTime: 2021-04-15 15:18:39
 -->
 <template>
     <div class="login">
@@ -70,7 +70,7 @@ export default defineComponent({
                 password: formState.password
             }
             const res = await proxy?.$module.user.login(data)
-            if (res?.data.code == 200) {
+            if (res?.data.code == '200') {
                 let token = res.data.data[0].token
                 sessionStorage.token = token
                 router.push({ name: 'home' })
